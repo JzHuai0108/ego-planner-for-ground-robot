@@ -8,7 +8,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall -g")
 
 find_package(Eigen3 REQUIRED)
 find_package(PCL 1.7 REQUIRED)
-
+find_package(VTK REQUIRED)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
@@ -40,5 +40,6 @@ add_library( bspline_opt
     src/gradient_descent_optimizer.cpp
     )
 target_link_libraries( bspline_opt
-    ${catkin_LIBRARIES} 
+    ${catkin_LIBRARIES}
+    ${VTK_LIBRARIES}
     )  
