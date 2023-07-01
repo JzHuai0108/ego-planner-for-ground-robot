@@ -21,15 +21,22 @@ mkdir build
 
 patchwork is used for ground segmentation. This planner accepts 3d point cloud information **Pointcloud2**. After the point cloud is segmented on the ground, the point cloud is projected to the 2d plane to construct a 2d grid map for planning.
 
-Follow the official repository to download this package：[patchworl_github](https://github.com/LimHyungTae/patchwork)
+The repo has a version of patchwork, so you don't need to download it again.
+Its official repository：[patchworl_github](https://github.com/LimHyungTae/patchwork)
 
 ## Simulation environment
 
 The simulation environment uses the open source simulation environment of the CMU Robotics Institute. Users  need to install the relevant libraries and download the mesh file. We recommend to use the indoor environment to test the planner.
 
-The environment have two versions for ros-melodic and ros-noetic. The package in this project is for ros-melodic.
-
+The environment have two versions for ros-melodic and ros-noetic. The package contained in this project is for ros-melodic.
+So you don't need to download it again if you use ros-melodic.
+Actually, we also successfully built and ran this repo on ros noetic + ubuntu 20.04.
 [CMU-environment](https://www.cmu-exploration.com/)
+
+# Build
+```
+catkin build
+```
 
 # Quick Start
 
@@ -38,6 +45,8 @@ First , start the simulation environment :
 ```bash
 roslaunch vehicle_simulator system_indoor.launch
 ```
+
+If you want to other environments say the garage, you need to comment out the planners from system_garage.launch as done with system_indoor.launch.
 
 Second, start the planner :
 
